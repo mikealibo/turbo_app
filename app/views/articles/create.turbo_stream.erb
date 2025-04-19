@@ -1,0 +1,15 @@
+<%= turbo_stream.prepend("articles",
+  partial: "articles/article",
+  locals: {
+    article: @article
+  }
+) %>
+<%= turbo_stream.update("article_form",
+  partial: "articles/new_article_link"
+) %>
+<%= turbo_stream.update("flash_alert",
+  partial: "shared/flash_alert",
+  locals: {
+    message: 'Article was successfully created.'
+  }
+) %>
