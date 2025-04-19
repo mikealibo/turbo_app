@@ -27,14 +27,14 @@ class ArticlesController < ApplicationController
       if @article.save
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.prepend('articles',
-              partial: 'articles/article',
+            turbo_stream.prepend("articles",
+              partial: "articles/article",
               locals: {
                 article: @article
               }
             ),
-            turbo_stream.update('article_form',
-              partial: 'articles/new_article_link'
+            turbo_stream.update("article_form",
+              partial: "articles/new_article_link"
             )
           ]
         end
@@ -52,14 +52,14 @@ class ArticlesController < ApplicationController
       if @article.update(article_params)
         format.turbo_stream do
           render turbo_stream: [
-            turbo_stream.replace(@article, 
-              partial: 'articles/article', 
+            turbo_stream.replace(@article,
+              partial: "articles/article",
               locals: {
                 article: @article
               }
             ),
-            turbo_stream.update('article_form',
-              partial: 'articles/new_article_link'
+            turbo_stream.update("article_form",
+              partial: "articles/new_article_link"
             )
           ]
         end
