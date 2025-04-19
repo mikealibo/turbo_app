@@ -5,6 +5,6 @@
     <%= article.body %>
   </p>
 
-  <%= link_to 'Edit', edit_article_path(article), data: { turbo_frame: "article_form", turbo_prefetch: false } %>
-  <%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_frame: "articles", turbo_prefetch: false } %>
+  <%= link_to 'Edit', edit_article_path(article), data: { turbo_frame: "article_form" } %>
+  <%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_frame: "articles" } %>
 </div>
