@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Articles" %>
+
+<%= link_to "Back to Home", root_path, data: { turbo_prefetch: false } %>
+<%= turbo_frame_tag "article_form" do %>
+  <%= render "articles/new_article_link" %>
+<% end %>
+
+<h1>Articles</h1>
+
+<%= turbo_frame_tag "articles" do %>
+  <%= render @articles %>
+<% end %>
