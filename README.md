@@ -5,4 +5,4 @@
 - Article
 
 ### Addons
-- SwalAlert for flash message
+- SwalAlert2 for flash message
