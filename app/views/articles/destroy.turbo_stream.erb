@@ -1,0 +1,7 @@
+<%= turbo_stream.remove(@article) %>
+<%= turbo_stream.update("flash_alert",
+  partial: "shared/flash_alert",
+  locals: {
+    message: 'Article was successfully destroyed.'
+  }
+) %>
