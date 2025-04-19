@@ -25,19 +25,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.turbo_stream do
-          render turbo_stream: [
-            turbo_stream.prepend("articles",
-              partial: "articles/article",
-              locals: {
-                article: @article
-              }
-            ),
-            turbo_stream.update("article_form",
-              partial: "articles/new_article_link"
-            )
-          ]
-        end
+        format.turbo_stream
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -50,19 +38,7 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.turbo_stream do
-          render turbo_stream: [
-            turbo_stream.replace(@article,
-              partial: "articles/article",
-              locals: {
-                article: @article
-              }
-            ),
-            turbo_stream.update("article_form",
-              partial: "articles/new_article_link"
-            )
-          ]
-        end
+        format.turbo_stream
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -76,7 +52,7 @@ class ArticlesController < ApplicationController
     @article.destroy!
 
     respond_to do |format|
-      format.html { redirect_to articles_path, status: :see_other, notice: "Article was successfully destroyed." }
+      format.turbo_stream
       format.json { head :no_content }
     end
   end
