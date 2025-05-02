@@ -8,4 +8,4 @@
 - Realtime display of articles
 
 ### Addons
-- SwalAlert2 for flash message
+- SwalAlert2 for flash message & confirmation alert
