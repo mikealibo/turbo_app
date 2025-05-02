@@ -13,7 +13,7 @@ export default class extends Controller {
 
   flash() {
     Swal.fire({
-      position: "bottom-end",
+      // position: "bottom-end",
       title: 'Success!',
       text: this.messageValue,
       icon: 'success',
