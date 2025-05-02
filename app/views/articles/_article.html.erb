@@ -6,5 +6,5 @@
   </p>
 
   <%= link_to 'Edit', edit_article_path(article), data: { turbo_frame: "article_form" } %>
-  <%= link_to 'Delete', article_path(article), data: { turbo_confirm: "Are you sure?", turbo_method: :delete, turbo_frame: "articles" } %>
+  <%= link_to 'Delete', article_path(article), data: { turbo_confirm: "Are you sure you want to delete it?", turbo_method: :delete, turbo_frame: "articles" } %>
 </div>
